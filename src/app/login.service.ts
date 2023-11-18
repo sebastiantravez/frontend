@@ -23,4 +23,7 @@ export class LoginService {
     return this.http.post<any>(this.uri + '/users/registrar?username=' + username + '&email=' + email + '&password=' + password, file)
   }
 
+  imagen(imagen: string) {
+    return this.http.get(this.uri + '/users/imagen/' + imagen, { responseType: 'blob' })
+  }
 }

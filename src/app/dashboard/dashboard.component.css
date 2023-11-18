@@ -1,0 +1,12 @@
+.border{
+ 
+}
+
+.img{
+    border-radius: 50%;
+    width: 10%;
+    height: 10%;
+    align-content: end;
+    float: right;
+    margin-left: 10px;
+}

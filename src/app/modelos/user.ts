@@ -1,7 +1,7 @@
 export class User {
     constructor(
-      public id?: string,
-      public username?: string,
-      public image?: string,
+      public id: number,
+      public username: string,
+      public image: string,
     ) { }
   }

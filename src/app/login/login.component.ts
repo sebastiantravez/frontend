@@ -46,7 +46,6 @@ export class LoginComponent {
     this.loginService.login(this.loginForm.value.username.toString(), this.loginForm.value.password.toString())
       .subscribe(
         (data: User) => {
-          debugger
           this.loginService.usuario = new User(data.id, data.username, data.image)
           localStorage.setItem("usuario", JSON.stringify(this.loginService.usuario))
           this.router.navigateByUrl("/dashboard");
