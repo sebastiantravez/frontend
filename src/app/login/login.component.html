@@ -1,0 +1,48 @@
+<div class="container">
+    <div *ngIf="isLogin" class="content">
+        <h3>Login</h3>
+        <br>
+        <form [formGroup]="loginForm" #signInNgForm="ngForm">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Usuario</label>
+                <input type="email" formControlName="username" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <br>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+                <button type="submit" class="btn btn-info" (click)="registrar()">Registrar</button>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="!isLogin" class="content">
+        <form [formGroup]="personaForm" #signInNgForm="ngForm">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Usuario</label>
+              <input type="email" class="form-control" formControlName="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="file" accept="image/*" formControlName="image" (change)="subirArchivo($event)" />
+            </div>
+            <br>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary" (click)="guardar()">Guardar</button>
+                <button type="submit" class="btn btn-warning" (click)="regresar()">Regresar</button>
+            </div>
+          </form>
+    </div>
+</div>
