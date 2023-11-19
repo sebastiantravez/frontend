@@ -48,6 +48,7 @@ export class LoginComponent {
         (data: User) => {
           this.loginService.usuario = new User(data.id, data.username, data.image)
           localStorage.setItem("usuario", JSON.stringify(this.loginService.usuario))
+          this.loginService.isLogged = true
           this.router.navigateByUrl("/dashboard");
         }, (response: HttpErrorResponse) => {
           alert("Las credenciales ingresadas son incorrectas")

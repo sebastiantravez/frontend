@@ -1,25 +1,4 @@
 <div class="container">
-    <div *ngIf="isLogin" class="content">
-        <h3>Login</h3>
-        <br>
-        <form [formGroup]="loginForm" #signInNgForm="ngForm">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Usuario</label>
-                <input type="email" formControlName="username" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp">
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <br>
-            <div class="d-flex justify-content-between">
-                <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
-                <button type="submit" class="btn btn-info" (click)="registrar()">Registrar</button>
-            </div>
-        </form>
-    </div>
     <div *ngIf="!isLogin" class="content">
         <form [formGroup]="personaForm" #signInNgForm="ngForm">
             <div class="form-group">
@@ -44,5 +23,50 @@
                 <button type="submit" class="btn btn-warning" (click)="regresar()">Regresar</button>
             </div>
           </form>
+    </div>
+</div>
+
+<div *ngIf="isLogin" class="container">
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+        <div class="col-xl-11 col-lg-12 col-md-9">
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image">
+                            <img src="https://i.pinimg.com/564x/e9/29/1c/e9291cc39e820cd4afc6e58618dfc9e0.jpg" alt="">
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Ingreso al Sistema</h1>
+                                </div>
+                                <form [formGroup]="loginForm">
+                                    <div class="form-group">
+                                        <input formControlName="username" type="email" class="form-control form-control-user"
+                                            id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Usuario">
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <input formControlName="password" type="password"
+                                            class="form-control form-control-user" id="exampleInputPassword"
+                                            placeholder="Password">
+                                    </div>
+                                    <br>
+                                    <div class="text-center">
+                                        <div class="d-flex justify-content-between">
+                                            <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+                                            <button type="submit" class="btn btn-success" (click)="registrar()">Registrar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

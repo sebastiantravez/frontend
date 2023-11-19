@@ -9,6 +9,7 @@ export class LoginService {
 
   usuario: User | undefined
   uri = "http://localhost:8080/api"
+  isLogged = false
 
   constructor(public http: HttpClient) {
 

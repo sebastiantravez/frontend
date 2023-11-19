@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
     this.usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
     this.imagen = "http://localhost:8080/" + this.usuario.image
   }
+  
   ngOnInit(): void {
     this.loginService.imagen(this.usuario.image).subscribe(data => {
       const reader = new FileReader();
@@ -26,5 +27,9 @@ export class DashboardComponent implements OnInit {
     }, error => {
       console.error('Error al obtener la imagen', error);
     })
+  }
+
+  closeSession() {
+
   }
 }

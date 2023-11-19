@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './login.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CanActivateViaAuthGuard } from './guards/CanActivateViaAuthGuard';
 
 @NgModule({
   imports: [
@@ -27,10 +29,12 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     DashboardComponent,
     UsersComponent,
-    MetasComponent
+    MetasComponent,
+    NavbarComponent
   ],
   providers: [
     LoginService,
+    CanActivateViaAuthGuard
   ],
   bootstrap: [AppComponent]
 })
